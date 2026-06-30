@@ -31,7 +31,6 @@ class Stock:
 
         html_content = response.text
         soup = BeautifulSoup(html_content, 'html.parser')
-        first_row = soup.select("table.distributions-table tr")[1]
         self.dividend = float(soup.select("table.distributions-table tr")[1].find("td").text.strip('$'))
         print(self.dividend)
     
